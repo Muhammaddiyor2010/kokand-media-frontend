@@ -1,4 +1,4 @@
-const API_BASE = "http://127.0.0.1:8000";
+const API_BASE = "https://kokand-media-backend-cybd.shitob.live";
 const TOKEN_KEY = "agentva_admin_token";
 
 let chart = null;
