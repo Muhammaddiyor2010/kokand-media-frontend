@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agentva SMM | Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="admin-body">
+  <main class="admin-wrap">
+    <section class="glass" id="loginBox">
+      <h1>Admin Login</h1>
+      <form id="loginForm">
+        <label>Login
+          <input type="text" name="username" required value="admin" />
+        </label>
+        <label>Parol
+          <input type="password" name="password" required value="admin123" />
+        </label>
+        <button class="btn btn-primary" type="submit">Kirish</button>
+        <p id="loginMessage" class="form-message"></p>
+      </form>
+    </section>
+
+    <section id="dashboard" class="hidden">
+      <div class="admin-top">
+        <h1>Admin Panel</h1>
+        <button id="logoutBtn" class="btn btn-secondary">Chiqish</button>
+      </div>
+
+      <div class="overview-grid">
+        <article class="glass stat"><h3>Jami</h3><p id="stTotal">0</p></article>
+        <article class="glass stat"><h3>Yangi</h3><p id="stNew">0</p></article>
+        <article class="glass stat"><h3>Ko'rilgan</h3><p id="stSeen">0</p></article>
+        <article class="glass stat"><h3>Tugagan</h3><p id="stDone">0</p></article>
+      </div>
+
+      <section class="glass admin-section">
+        <h2>Oylik so'rovlar grafigi</h2>
+        <canvas id="monthlyChart" height="120"></canvas>
+      </section>
+
+      <section class="glass admin-section">
+        <h2>Sayt kontenti</h2>
+        <form id="contentForm" class="content-form">
+          <label>Brand<input name="brand" required /></label>
+          <label>Hero sarlavha<input name="hero_title" required /></label>
+          <label>Hero matn<textarea name="hero_subtitle" rows="2" required></textarea></label>
+          <label>Oylik narx ($)<input name="monthly_price" type="number" min="1" required /></label>
+          <label>Video narx ($)<input name="one_time_video_price" type="number" min="1" required /></label>
+          <label>Telefon<input name="phone" required /></label>
+          <label>Telegram<input name="telegram" required /></label>
+          <label>About<textarea name="about" rows="3" required></textarea></label>
+          <label>Xizmatlar (har qatorda: Nomi | Tavsif)
+            <textarea name="servicesText" rows="7" required></textarea>
+          </label>
+          <button class="btn btn-primary" type="submit">Saqlash</button>
+          <p id="contentMessage" class="form-message"></p>
+        </form>
+      </section>
+
+      <section class="glass admin-section">
+        <div class="requests-head">
+          <h2>Qoldirilgan so'rovlar</h2>
+          <select id="statusFilter">
+            <option value="">Barchasi</option>
+            <option value="new">Yangi</option>
+            <option value="seen">Ko'rilgan</option>
+            <option value="done">Tugagan</option>
+          </select>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Ism</th>
+                <th>Telefon</th>
+                <th>Izoh</th>
+                <th>Vaqt</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="requestRows"></tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script type="module" src="./admin.js"></script>
+</body>
+</html>

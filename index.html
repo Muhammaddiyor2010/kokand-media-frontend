@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agentva SMM | Premium Agency</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <header class="topbar">
+    <div class="brand" id="brandName">Agentva SMM</div>
+    <a class="admin-link" href="./admin.html">Admin</a>
+  </header>
+
+  <main class="container">
+    <section class="hero glass">
+      <p class="kicker">Premium SMM Agency</p>
+      <h1 id="heroTitle">SMM Agentlik Xizmati</h1>
+      <p id="heroSubtitle">Brendingizni kontent orqali sotuvga olib chiqamiz.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">So'rov qoldirish</a>
+        <a href="#pricing" class="btn btn-secondary">Narxlar</a>
+      </div>
+    </section>
+
+    <section class="services glass" id="services">
+      <h2>Xizmatlarimiz</h2>
+      <div class="service-grid" id="serviceGrid"></div>
+    </section>
+
+    <section class="pricing glass" id="pricing">
+      <h2>Narxlar</h2>
+      <div class="price-grid">
+        <article class="price-card">
+          <h3>Oylik shartnoma</h3>
+          <p class="price"><span id="monthlyPrice">400</span>$</p>
+          <p>To'liq SMM xizmat paketi va strategik kuzatuv.</p>
+        </article>
+        <article class="price-card">
+          <h3>Bir martalik video</h3>
+          <p class="price"><span id="videoPrice">30</span>$</p>
+          <p>Reklama yoki kontent uchun 1 dona tayyor video.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="about glass">
+      <h2>Nega aynan biz?</h2>
+      <p id="aboutText">Har bir xizmat professional mutaxassislar tomonidan bajariladi.</p>
+      <div class="contact-mini">
+        <span id="contactPhone"></span>
+        <span id="contactTelegram"></span>
+      </div>
+    </section>
+
+    <section class="contact glass" id="contact">
+      <h2>Bog'lanish uchun so'rov yuboring</h2>
+      <form id="leadForm">
+        <label>Ism
+          <input type="text" name="name" required minlength="2" maxlength="80" placeholder="Ismingiz" />
+        </label>
+        <label>Telefon raqam
+          <input type="tel" name="phone" required minlength="7" maxlength="30" placeholder="+998..." />
+        </label>
+        <label>Izoh (ixtiyoriy)
+          <textarea name="comment" maxlength="500" rows="4" placeholder="Qo'shimcha ma'lumot"></textarea>
+        </label>
+        <button class="btn btn-primary" type="submit">Yuborish</button>
+        <p id="formMessage" class="form-message"></p>
+      </form>
+    </section>
+  </main>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
